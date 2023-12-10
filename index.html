@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://pwnable.kr/index.php -->
+<html lang="en" class=" js no-touch" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+#title{
+	color: #fefefe;
+	font-size:22px;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+}
+#login{
+	width:600px; height:400px; position:fixed; 
+	text-align:center; left:50%; top:50%; margin-top:-210px; 
+	margin-left:-310px; border:4px solid #92F; background:#fff; 
+	display:block; z-index:2; visibility:hidden;
+	border-radius: 10px 10px 10px 10px;
+}
+#join{
+	width:600px; height:400px; position:fixed; 
+	text-align:center; left:50%; top:50%; margin-top:-210px; 
+	margin-left:-310px; border:4px solid #1a3; background:#fff; 
+	display:block; z-index:2; visibility:hidden;
+	border-radius: 10px 10px 10px 10px;
+}
+#myinfo{
+	width:600px; height:400px; position:fixed; 
+	text-align:center; left:50%; top:50%; margin-top:-210px; 
+	margin-left:-310px; border:4px solid #ebc; background:#fff; 
+	display:block; z-index:2; visibility:hidden;
+	border-radius: 10px 10px 10px 10px;
+}
+#back{
+	width:100%; height:100%; position:fixed; 
+	top:0; left:0; background-color:rgba(0, 0, 0, 0.5); 
+	z-index:1; visibility:hidden;
+}
+</style>
+<script async="" src="./pwnable.kr_index.php_files/analytics.js.download"></script><script type="text/javascript">
+function myinfo_check_submit(){
+		
+	if(!document.myinfo.id.value){
+		alert("Input ID");
+		document.join.id.focus();
+		return false;
+	}
+	if(!document.myinfo.pw.value) 
+	{
+		alert("Input PW");
+		document.myinfo.pw.focus();
+		return false;
+	}  
+	if(!document.myinfo.name.value) 
+	{
+		alert("Input NAME");
+		document.myinfo.name.focus();
+		return false;
+	}  
+	if(!document.myinfo.email.value) 
+	{
+		alert("Input EMAIL");
+		document.myinfo.email.focus();
+		return false;
+	}  	
+	if(document.myinfo.npw.value != document.myinfo.npw2.value) 
+	{
+		alert("Password Doesn't Match!");
+		document.myinfo.pw.focus();
+		return false;
+	}  		
+	document.myinfo.submit();	
+	return true;
+}
+function join_check_submit(){
+		
+	if(!document.join.id.value){
+		alert("Input ID");
+		document.join.id.focus();
+		return false;
+	}
+	if(!document.join.pw.value) 
+	{
+		alert("Input PW");
+		document.join.pw.focus();
+		return false;
+	}  
+	if(!document.join.name.value) 
+	{
+		alert("Input NAME");
+		document.join.name.focus();
+		return false;
+	}  
+	if(!document.join.email.value) 
+	{
+		alert("Input EMAIL");
+		document.join.email.focus();
+		return false;
+	}  	
+	if(document.join.pw.value != document.join.pw2.value) 
+	{
+		alert("Password Doesn't Match!");
+		document.join.pw.focus();
+		return false;
+	}  		
+	document.join.submit();	
+	return true;
+}
+function closeLayer(){
+	var back = document.getElementById("back");
+	back.style.visibility = "hidden";
+	var l = document.getElementById("login");
+	l.style.visibility ="hidden";
+	var l = document.getElementById("join");
+	l.style.visibility ="hidden";
+	var l = document.getElementById("myinfo");
+	l.style.visibility ="hidden";
+}
+function onLayer(layer){
+	var back = document.getElementById("back");
+	back.style.visibility ="visible";
+	back.onclick = function () { 
+		var offsets = document.getElementById(layer).getBoundingClientRect();
+		var top = offsets.top; var left = offsets.left;
+		var bottom = offsets.bottom; var right = offsets.right;
+		var e = window.event; var X = e.clientX; 	var Y = e.clientY;		
+		if( X < left || X > right || Y < top || Y > bottom ){
+			closeLayer(); 			
+		}
+	};
+	var l = document.getElementById(layer);
+	l.style.visibility = "visible";
+}
+function login_check_submit(){
+        if(!document.login.id.value){
+                alert("Input ID");
+                document.login.id.focus();
+                return false;
+        }
+        if(!document.login.pw.value) 
+        {
+                alert("Input PW");
+                document.login.pw.focus();
+                return false;
+        }
+        document.join.submit(); 
+        return true;
+}
+function toggle(){
+    var div = document.getElementById('pwreset');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+</script>
+<link rel="stylesheet" type="text/css" href="./pwnable.kr_index.php_files/default.css">
+<link rel="stylesheet" type="text/css" href="./pwnable.kr_index.php_files/component.css">
+<script src="./pwnable.kr_index.php_files/modernizr.custom.js.download"></script>
+
+<style id="custom-cursor" type="text/css">body button, body [type='button'], body input[type='reset'], body input[type='submit'], body [role="button"], ::-webkit-search-cancel-button, ::-webkit-search-decoration, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, [role^=button], .cc_pointer, [type="search"]::-webkit-search-cancel-button, a, select, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img,  ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon, body .custom-cursor-on-hover {cursor: url("data:image/png;base64,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") 1 2, pointer !important;} html,body,body select,body .custom-cursor-default-hover {cursor: url("data:image/png;base64,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") 0 1, auto !important;}</style></head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52224222-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<div id="back"></div>
+<div id="login">
+	<br><br><br><br>
+	<h2>Login</h2>
+	<form method="post" name="login" action="https://pwnable.kr/lib.php?cmd=login" onsubmit="return login_check_submit()">
+	ID <input type="text" name="id" value=""> <br>
+	PW <input type="password" name="pw" value=""> <br>
+	<input type="submit" value="login"> <input type="button" onclick="onLayer(&#39;join&#39;);" value="JOIN"> <input type="button" onclick="toggle()" value="forgot pw">
+	</form>
+	<br>
+	<div id="pwreset" style="display: none;">
+	    <form method="post" action="https://pwnable.kr/lib.php?cmd=pwreset">
+	    ID <input type="text" name="id" value=""> <input type="submit" value="RESET PASSWORD (slow! u gotta wait)">
+	    </form>
+	</div>	
+</div>
+<div id="join">
+	<br><br><br><br>
+	<h2>Join</h2>			
+	<form method="post" name="join" action="https://pwnable.kr/lib.php?cmd=join" onsubmit="return join_check_submit()">
+	<center>
+	*passwords are encrypted. but avoid using important password (i.e., password for your google account).
+	<table>
+	<tbody><tr><td>ID</td>		<td><input type="text" name="id"></td></tr>
+	<tr><td>NAME</td>	<td><input type="text" name="name"></td></tr>
+	<tr><td>E-MAIL</td>	<td><input type="text" name="email"></td></tr>
+	<tr><td>PW</td>		<td><input type="password" name="pw"></td></tr>
+	<tr><td>PW Confirm</td>	<td><input type="password" name="pw2"></td></tr>
+	<tr><td colspan="2" align="center"><font size="2">Input valid E-MAIL if you want wechall scoring and password recovery</font></td></tr>
+	<tr><td colspan="2" align="center"><input type="submit" value="OK"></td></tr>
+	</tbody></table>		
+	
+</center></form></div>
+<div id="myinfo">
+	Login first	
+i</div>
+
+<div class="container">
+<!-- Top Navigation -->
+<div class="codrops-top clearfix">
+<a href="https://pwnable.kr/index.php#" onclick="location.href=&quot;index.php&quot;" class="codrops-icon"><span>Home</span></a>
+<a href="https://pwnable.kr/index.php#" onclick="location.href=&quot;play.php&quot;" class="codrops-icon"><span>Play</span></a>
+<a href="https://pwnable.kr/index.php#" onclick="location.href=&quot;rank.php&quot;" class="codrops-icon"><span>Rank</span></a>
+	<span class="right"><a class="codrops-icon codrops-icon-drop" href="https://pwnable.kr/index.php#" onclick="onLayer(&quot;login&quot;);"><span>Login</span></a></span>
+	</div>
+
+<header>
+<a href="https://www.youtube.com/watch?v=HPKxrwrmOgk"><img src="./pwnable.kr_index.php_files/logo.png" width="35%"></a><br>
+
+</header>
+<section class="color-1">
+<center>
+	<span id="title">What is pwnable.kr?</span><br><br>
+	<table width="700">
+	<tbody><tr><td>
+	&nbsp;&nbsp; 'pwnable.kr' is a non-commercial <i><a href="https://en.wikipedia.org/wiki/Wargame_(hacking)">wargame site</a></i> 
+        which provides various pwn challenges regarding system exploitation.
+	the main purpose of pwnable.kr is <i>'fun'</i>. &nbsp;&nbsp; please consider each of the challenges as a game.
+	But, if you want to just study pwn-related stuffs, check out the following video lectures.
+	</td></tr>
+<tr><td>
+	<iframe style="border-width:2px; border-color:white; border-style:solid" width="330" height="220" src="./pwnable.kr_index.php_files/RCJdPiogUIk.html" frameborder="0" wmode="Opaque"></iframe>
+	<iframe style="border-width:2px; border-color:white; border-style:solid" width="330" height="220" src="./pwnable.kr_index.php_files/jwzeJU_62IQ.html" frameborder="0" wmode="Opaque"></iframe>
+<br>
+	<iframe style="border-width:2px; border-color:white; border-style:solid" width="330" height="220" src="./pwnable.kr_index.php_files/eWEgUcHPle0.html" frameborder="0" wmode="Opaque"></iframe>
+	<iframe style="border-width:2px; border-color:white; border-style:solid" width="330" height="220" src="./pwnable.kr_index.php_files/eTcVLqKpZJc.html" frameborder="0" wmode="Opaque"></iframe>
+</td></tr>
+	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	</tbody></table>
+
+	<span id="title">How do I play?</span><br><br>
+	<table width="700">
+	<tbody><tr><td>
+	&nbsp;&nbsp; there are <i>flag</i> &nbsp; files corresponding to each challenges (similar to <a href="https://ctftime.org/ctf-wtf/">CTF</a>), you need to read it and submit to pwnable.kr to get the corresponding point.
+	in order to read the flag file, you need some skills regarding programming, reverse-engineering, bug exploitation, system knowledge, cryptography.
+	each challenges have author's <i>intended solution</i>, however, there are a lot of unintended solutions as well :)
+	the challenges are divided into four categories.<br>
+	<br>
+	[Toddler's Bottle] &nbsp;-&nbsp; very easy challenges with simple mistakes.<br>
+	[Rookiss] &nbsp;-&nbsp; typical bug exploitation challenges for rookies.<br>
+	[Grotesque] &nbsp;-&nbsp; these challenges are grotesque-y. painful to solve it, but very tasty flag :)<br>
+	[Hacker's Secret] &nbsp;-&nbsp; intended solution for these challenges involves special techniques.<br>
+	<br>
+	</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	</tbody></table>
+
+	<span id="title">Disclaimer</span><br><br>
+	<table width="700">
+	<tbody><tr><td>1. pwnable.kr is a <i>non-commercial</i> website.</td></tr>
+	<tr><td>2. the contents and services provided by pwnable.kr is absolutly free to individuals for non-commercial use, 
+	however it is <i>prohibited</i> from being utilized in commercial manner.</td></tr>
+	<tr><td>3. contact admin or use proper citation in case of using the contents of pwnable.kr for non-commercial *public* use (e.g., academic class exercise).</td></tr>
+	<tr><td>4. never use pwnable.kr's resources or information learned from pwnable.kr for illegal purpose.</td></tr>
+	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	</tbody></table>
+	
+	<span id="title">Rules &amp; Tips</span><br><br>
+	<table border="1" bordercolor="white" cellpadding="10" cellspacing="0" width="700">
+	<tbody><tr><td>1. all kinds of DoS activities (i.e., too many process/file creation, or network access) are forbidden. 
+	<b>there is no challenge which requires *excessive brute-forcing*</b>. the intended solution always gets you the flag in less than a minuet</td></tr>
+	<tr><td>2. if you find any unintended bug or system deficiency, please report admin. you will be thanked and get some credit</td></tr>
+	<tr><td>3. challenges in Toddler's Bottle are allowed to freely post the solutions online. However, please refrain from posting solution for challenges in other categories. But if you insist, post easy ones (solved by many people) and do not spoil too much details for the sake of fun. </td></tr>
+	<tr><td>4. you can ask/answer hints for challenges in IRC, but again, don't spoil too much</td></tr>
+	<tr><td>5. all challenges are solvable. but if you think something is wrong, feel free to report admin</td></tr>
+	<tr><td>6. google is the best teacher in the world, but if you are hopelessly stuck, feel free to contact admin or IRC for advice</td></tr>
+	<tr><td>7. difficulties of pwnable.kr is orders of magnitude easier than top class CTF such as <a href="https://legitbs.net/">DEFCON CTF</a> or real world hacking contest such as <a href="https://en.wikipedia.org/wiki/Pwn2Own">PWN2OWN</a></td></tr>	
+	</tbody></table>
+
+	<br><br>
+	<span id="title">Contact</span><br><br>
+	<table border="1" bordercolor="white" cellpadding="10" cellspacing="0" width="700">
+	<tbody><tr><td>admin</td><td> daehee (daehee87@khu.ac.kr) </td></tr>
+	<tr><td>irc</td><td> irc.netgarage.org:6667/#pwnable.kr (or type "irssi" from pwnable.kr server)</td></tr>
+	</tbody></table>
+	<br><br>
+	<span id="title">Credits</span><br><br>
+	<table width="700">
+	<tbody><tr><td>jonathanxz22 : reporting server vulnerability (weak password)</td></tr>
+	<tr><td>N1kasu, martin : reporting server vulnerability (local privilege escalation)</td></tr>
+	<tr><td>veritas501 : reporting configuration error that allows unintended access for all QEMU-based tasks</td></tr>
+	<tr><td>haber : reporting multiple vulnerabilities in configuration</td></tr>
+	<tr><td>afang : reporting unintended solution (dos4fun)</td></tr>
+	<tr><td>debukuk : reporting CSRF vulnerability on webpage</td></tr>
+	<tr><td>yelang123 : reporting XSS vulnerability on webpage</td></tr>
+	<tr><td>5unKn0wn : reporting unintended solution (pwnsandbox)</td></tr>
+	<tr><td>Charo : reporting web server configuration error</td></tr>
+	<tr><td>martin : reporting server vulnerability (local privilege escalation on proxy-server challenge)</td></tr>
+	<tr><td>bla : IRC channel support</td></tr>
+	<tr><td>neomant : reporting site management mistake (information disclosure)</td></tr>
+	<tr><td>null0 : reporting site configuration error (duplicate flag authentication)</td></tr>
+	<tr><td>acez : reporting server configuration error (unintended access for all QEMU-based tasks)</td></tr>
+	<tr><td>sweetchip : reporting server configuration error (unintended ssh access)</td></tr>
+	</tbody></table>
+
+	<br><br>
+	<span id="title">Cool wargame sites &amp; CTF competition</span><br><br>
+	<table width="700">
+	<tbody><tr><td>
+	<center><a href="http://io.netgarage.org/"><img width="300" height="100" src="./pwnable.kr_index.php_files/sts.png"></a> <a href="https://w3challs.com/"><img width="300" height="100" src="./pwnable.kr_index.php_files/w3challs.png"></a><br>
+	<center><a href="https://ctftime.org/"><img width="300" height="100" src="./pwnable.kr_index.php_files/ctftime.png"></a> <a href="https://legitbs.net/"><img width="300" height="100" src="./pwnable.kr_index.php_files/defcon.png"></a><br>
+	<center><a href="http://ghostintheshellcode.com/"><img width="300" height="100" src="./pwnable.kr_index.php_files/gits.png"></a> <a href="http://codegate.org/"><img width="300" height="100" src="./pwnable.kr_index.php_files/codegate.png"></a><br>
+	<br>
+	</center></center></center></td></tr>	
+	</tbody></table>	
+
+        <br><br>
+        <span id="title">pwnable.kr is powered/supported by SSLab@Gatech, Pwnlab@KHU</span><br><br>
+        <table width="700">
+        <tbody><tr><td>
+        <center><a href="https://gts3.org/"><img width="300" height="100" src="./pwnable.kr_index.php_files/sslab.png"></a>
+                <a href="https://pwnlab.kr/"><img width="300" height="100" src="./pwnable.kr_index.php_files/lablogo.png"></a><br>
+        <br>
+        </center></td></tr>
+        </tbody></table>
+
+
+</center></section>
+<center><font size="2">© PWNABLE.KR SINCE 2014 - ALL RIGHTS RESERVED. OPTIMIZED TO CHROME
+</font></center></div><!-- /container --><font size="2">
+<script src="./pwnable.kr_index.php_files/classie.js.download"></script>
+
+
+
+
+</font></body></html>
